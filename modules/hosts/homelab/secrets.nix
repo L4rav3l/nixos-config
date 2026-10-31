@@ -6,6 +6,6 @@
 
   sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
-  sops.defaultSopsFile = ../../../secrets/homelab.yml;
+  sops.defaultSopsFile = ../../../secrets/homelab.yaml;
   sops.defaultSopsFormat = "yaml";
 }

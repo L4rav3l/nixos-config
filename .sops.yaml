@@ -7,7 +7,7 @@ creation_rules:
       - age:
           - *laravel
           # - framework13
-  - pat_regex: secrets/homelab\.yaml$
+  - path_regex: secrets/homelab\.yaml$
     key_groups:
       - age:
           - *laravel
