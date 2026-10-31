@@ -33,6 +33,7 @@
             };
         };
 
-        diskoConfigurations.laptop = ./modules/hosts/laptop/disko.nix;
+        diskoConfigurations.laptop = import ./modules/hosts/laptop/disko.nix;
+        diskoConfigurations.homelab = import ./modules/hosts/homelab/disko.nix;
     };
 }
