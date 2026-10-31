@@ -11,6 +11,7 @@
     ../../features/base.nix
     ../../features/cli.nix
     ../../features/server.nix
+    ../../features/tailscale.nix
   ];
 
   networking.hostName = "homelab";

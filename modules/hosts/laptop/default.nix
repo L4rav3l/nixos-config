@@ -14,6 +14,7 @@
     ../../features/cli.nix
     ../../features/desktop.nix
     ../../features/theme.nix
+    ../../features/tailscale.nix
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg:

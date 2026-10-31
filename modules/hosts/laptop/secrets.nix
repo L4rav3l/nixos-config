@@ -15,6 +15,8 @@
   #sops.secrets."wifi/mobile-ssid" = { };
   #sops.secrets."wifi/mobile-psk" = { };
 
+  sops.secrets."tailscale/key" = { };
+
   #sops.templates."wifi.env".content = ''
   #   WIFI_HOME_SSID=${config.sops.placeholder."wifi/home-ssid"}
   #   WIFI_HOME_PSK=${config.sops.placeholder."wifi/home-psk"}
