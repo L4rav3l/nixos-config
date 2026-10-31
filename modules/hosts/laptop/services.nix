@@ -10,6 +10,7 @@
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
+  users.users.laravel.extraGroups = [ "libvirtd" ];
 
   services.fwupd.enable = true;
   services.power-profiles-daemon.enable = true;
