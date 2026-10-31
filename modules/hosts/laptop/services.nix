@@ -8,6 +8,9 @@
     settings.Resolve.DNSOverTLS = "yes";
   };
 
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   services.fwupd.enable = true;
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;

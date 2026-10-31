@@ -22,6 +22,7 @@
     ffmpeg
     davinci-resolve
     fastfetch
+    dotnet-sdk_10
   ];
 
   systemd.user.services.usbguard-notifier = {

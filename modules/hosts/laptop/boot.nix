@@ -15,4 +15,6 @@
   boot.supportedFilesystems = [ "ntfs" "exfat" "ext4" "btrfs" ];
 
   boot.kernelParams = [ "quiet" "loglevel=3" ];
+  
+  boot.kernelModules = [ "kvm-amd" ];
 } 
