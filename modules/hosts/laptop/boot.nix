@@ -4,7 +4,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.limine.maxGenerations = 10;
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_hardened;
 
   boot.initrd.kernelModules = [ "dm_crypt" "aes" "xts" ];
 
