@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, lib, pkgs, ... }:
 {
   imports = [
     inputs.nixos-hardware.nixosModules.framework-13-7040-amd
@@ -8,11 +8,19 @@
     ./boot.nix
     ./disko.nix
     ./services.nix
+    ./secrets.nix
 
     ../../features/base.nix
     ../../features/cli.nix
-    ../../features/secrets.nix
+    ../../features/desktop.nix
+    ../../features/theme.nix
   ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "davinci-resolve"
+      "aseprite"
+    ];
 
   networking.hostName = "framework13";
   system.stateVersion = "26.11";
@@ -20,6 +28,7 @@
   users.users.laravel = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
+    shell = pkgs.fish;
   };
 
   home-manager = {

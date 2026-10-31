@@ -12,4 +12,6 @@
     btop
     git
   ];
+
+  programs.fish.enable = true;
 }

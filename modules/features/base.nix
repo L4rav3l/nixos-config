@@ -1,7 +1,7 @@
 { ... }:
 {
   i18n.defaultLocale = "hu_HU.UTF-8";
-  
+
   time.timeZone = "Europe/Budapest";
 
   console.keyMap = "hu";

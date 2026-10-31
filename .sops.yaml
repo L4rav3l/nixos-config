@@ -1,8 +1,14 @@
 keys:
-  - &laravel age1eauslrealtx2h9a76c30g2qfuyqm0ddxpzdjsdjv90xlxzffh58qlmxf3c
+  - &laravel age1lad7tvevp50nekhxlnj2qtd6jkq9hhqtvx5e5s0krxffc2pz5fuq5cy6re
 
 creation_rules:
-  - path_regex: secrets/.*\.yaml$
+  - path_regex: secrets/laptop\.yaml$
     key_groups:
       - age:
           - *laravel
+          # - framework13
+  - pat_regex: secrets/homelab\.yaml$
+    key_groups:
+      - age:
+          - *laravel
+        #  - *homelab

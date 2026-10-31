@@ -7,5 +7,5 @@
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
     };
-  }
+  };
 }
