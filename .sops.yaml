@@ -1,0 +1,8 @@
+keys:
+  - &laravel age1eauslrealtx2h9a76c30g2qfuyqm0ddxpzdjsdjv90xlxzffh58qlmxf3c
+
+creation_rules:
+  - path_regex: secrets/.*\.yaml$
+    key_groups:
+      - age:
+          - *laravel
