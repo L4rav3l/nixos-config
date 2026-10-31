@@ -26,11 +26,11 @@
                 modules = [ ./modules/hosts/laptop/default.nix ];
             };
 
-            /* homelab = nixpkgs.lib.nixosSystem {
+            homelab = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 specialArgs = { inherit inputs; };
                 modules = [ ./modules/hosts/homelab/default.nix ];
-            }; */
+            };
         };
 
         diskoConfigurations.laptop = ./modules/hosts/laptop/disko.nix;
