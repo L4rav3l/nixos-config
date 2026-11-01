@@ -4,9 +4,11 @@
     inputs.nixos-hardware.nixosModules.framework-13-7040-amd
     inputs.disko.nixosModules.disko
     inputs.home-manager.nixosModules.home-manager
+    inputs.impermanence.nixosModules.impermanence
 
     ./boot.nix
     ./disko.nix
+    ./persistence.nix
     ./services.nix
     ./secrets.nix
 

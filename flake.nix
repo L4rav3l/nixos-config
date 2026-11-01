@@ -16,6 +16,10 @@
 
         stylix.url = "github:nix-community/stylix";
         stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+        impermanence.url = "github:nix-community/impermanence";
+        impermanence.inputs.nixpkgs.follows = "nixpkgs";
+        impermanence.inputs.home-manager.follows = "home-manager";
     };
 
     outputs = {self, nixpkgs, ... }@inputs: {

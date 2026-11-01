@@ -31,14 +31,15 @@
                   type = "btrfs";
                   extraArgs = [ "-f" ];
                   subvolumes = {
-                    "@"            = { mountpoint = "/"; mountOptions = ["compress=zstd:1" "noatime" ]; };
-                    "@home"        = { mountpoint = "/home"; mountOptions = ["compress=zstd:1" "noatime" ]; };
-                    "@nix"         = { mountpoint = "/nix"; mountOptions = ["compress=zstd:1" "noatime" ]; };
-                    "@log"         = { mountpoint = "/var/log"; mountOptions = ["compress=zstd:1" "noatime" ]; };
-                    "@cache"       = { mountpoint = "/var/cache"; mountOptions = ["compress=zstd:1" "noatime" ]; };
-                    "@tmp"         = { mountpoint = "/var/tmp"; mountOptions = ["compress=zstd:1" "noatime" ]; };
-                    "@srv"         = { mountpoint = "/srv"; mountOptions = ["compress=zstd:1" "noatime" ]; };
-                    "@snapshots"  = { mountpoint = "/.snapshots"; mountOptions = ["compress=zstd:1" "noatime" ]; };
+                    "@"            = { mountpoint = "/";                        mountOptions = ["compress=zstd:1" "noatime" ]; };
+                    "@home"        = { mountpoint = "/home";                    mountOptions = ["compress=zstd:1" "noatime" ]; };
+                    "@nix"         = { mountpoint = "/nix";                     mountOptions = ["compress=zstd:1" "noatime" ]; };
+                    "@log"         = { mountpoint = "/var/log";                 mountOptions = ["compress=zstd:1" "noatime" ]; };
+                    "@cache"       = { mountpoint = "/var/cache";               mountOptions = ["compress=zstd:1" "noatime" ]; };
+                    "@tmp"         = { mountpoint = "/var/tmp";                 mountOptions = ["compress=zstd:1" "noatime" ]; };
+                    "@srv"         = { mountpoint = "/srv";                     mountOptions = ["compress=zstd:1" "noatime" ]; };
+                    "@snapshots"   = { mountpoint = "/.snapshots";              mountOptions = ["compress=zstd:1" "noatime" ]; };
+                    "@persist"     = { mountpoint = "/persist";                 mountOptions = ["compress=zstd:1" "noatime" ]; };
                   };
                 };
               };
