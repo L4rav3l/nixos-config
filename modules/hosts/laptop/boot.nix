@@ -4,7 +4,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.limine.maxGenerations = 10;
 
-  boot.kernelPackages = pkgs.linuxPackages_hardened;
+  nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+
+  nix.settings = {
+    extra-substituters = [ inputs.nix-cachyos-kernel.overlays.pinned ];
+    extra-trusted-public-keys = [ "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ=" ];
+  };
 
   boot.initrd.kernelModules = [ "dm_crypt" "aes" "xts" ];
 

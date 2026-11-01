@@ -1,6 +1,6 @@
 { pkgs, ...}:
 {
-    boot.kernelPackages = pkgs.linuxPackages_hardened;
+    boot.kernelPackages = pkgs.linuxPackages;
     hardware.cpu.intel.updateMicrocode = true;
 
     boot.loader.limine.enable = true;
