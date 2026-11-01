@@ -23,5 +23,7 @@
     };
   };
 
+  swapDevices = [ { device = "/var/lib/swapfile"; size = 16 * 1024; } ];
+
   services.cyan-skillfish-governor-smu.settings.gpu-usage.fix-freq = true;
 }

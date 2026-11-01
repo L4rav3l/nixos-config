@@ -1,19 +1,21 @@
 keys:
   - &laravel age1lad7tvevp50nekhxlnj2qtd6jkq9hhqtvx5e5s0krxffc2pz5fuq5cy6re
-
+  - &framework13 age1f05ahfs6gj2c4e947flvapxhmaz2km8yx0ee7qm649sjq0wah3nqp8vkud
+  - &bc250 age1axgu2a7w7rhgcyje00jrfklmcdhteyut0sleuzy4mg2878262a6qm2kn8c
+  - &homelab age1z7u9fadup2r8j4e29dgy5n526n9p73t5q6663jw2w5w3e75zw58szca0dd 
 creation_rules:
   - path_regex: secrets/laptop\.yaml$
     key_groups:
       - age:
           - *laravel
-          # - framework13
+          - *framework13
   - path_regex: secrets/homelab\.yaml$
     key_groups:
       - age:
           - *laravel
-        #  - homelab
+          - *homelab
   - path_regex: secrets/bc250\.yaml$
     key_groups:
       - age:
           - *laravel
-        #  - bc250
+          - *bc250

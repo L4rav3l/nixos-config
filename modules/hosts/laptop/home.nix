@@ -9,14 +9,14 @@
     brave-origin
     proton-vpn
     gnome-calculator
-    okular
+    kdePackages.okular
     qbittorrent
     vesktop
     anki
     prismlauncher
     obs-studio
-    torbrowser
-    ultimaker-cura
+    tor-browser
+    cura-appimage
     aseprite
     yt-dlp
     ffmpeg
@@ -51,15 +51,19 @@
     fastfetch '';
   };
 
+  programs.gnome-shell.enable = true;
+
   programs.git = {
     enable = true;
-    userName = "L4rav3l";
-    userEmail = "108834640+L4rav3l@users.noreply.github.com";
-    aliases = {
-      st = "status -sb";
-      lg = "log --oneline --graph --decorate";
-    };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "L4rav3l";
+        email = "108834640+L4rav3l@users.noreply.github.com";
+      };
+      alias = {
+        st = "status -sb";
+        lg = "log --oneline --graph --decorate";
+      };
       pull.rebase = true;
     };
   };

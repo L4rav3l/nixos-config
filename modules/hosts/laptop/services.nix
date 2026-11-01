@@ -28,8 +28,8 @@
   networking.firewall.allowedTCPPorts = [ ];
 
   services.smartd.enable = true;
-  services.journald.extraConfig = "SystemMaxUse=500M";
-  services.iio-sensor-proxy.enable = true;
+  services.journald.settings.Journal.SystemMaxUse = "500M";
+  hardware.sensor.iio.enable = true;
 
   services.printing.enable = true;
 

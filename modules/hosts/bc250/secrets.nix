@@ -10,5 +10,5 @@
   sops.defaultSopsFormat = "yaml";
 
   sops.secrets."tailscale/key" = { };
-  #sops.secrets."user/laravel-password".neededForUsers = true;
+  sops.secrets."user/laravel-password".neededForUsers = true;
 }

@@ -1,9 +1,9 @@
-{ inputs, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 {
   imports = [
     inputs.disko.nixosModules.disko
     inputs.home-manager.nixosModules.home-manager
-    inputs.bc-250.nixosModules.bc250;
+    inputs.bc-250.nixosModules.bc250
 
     ./boot.nix
     ./disko.nix
@@ -25,6 +25,11 @@
     extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.fish;
   };
+
+  users.users.laravel.hashedPasswordFile = config.sops.secrets."user/laravel-password".path;
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (pkgs.lib.getName pkg) [ "steam" "steam-unwrapped" ];
 
   security.sudo.wheelNeedsPassword = false;
   

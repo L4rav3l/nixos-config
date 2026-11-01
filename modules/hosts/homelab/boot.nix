@@ -7,8 +7,6 @@
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.limine.maxGenerations = 10;
 
-    boot.initrd.systemd.enable = true;
-
     boot.initrd.systemd.network = {
       enable = true;
       networks."10-eth" = {

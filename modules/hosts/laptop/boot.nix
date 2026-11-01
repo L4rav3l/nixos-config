@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   boot.loader.limine.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -8,13 +8,11 @@
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
   nix.settings = {
-    extra-substituters = [ inputs.nix-cachyos-kernel.overlays.pinned ];
+    extra-substituters = [ "https://cache.lantian.pub/lantian" ];
     extra-trusted-public-keys = [ "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ=" ];
   };
 
   boot.initrd.kernelModules = [ "dm_crypt" "aes" "xts" ];
-
-  boot.initrd.systemd.enable = true;
 
   boot.tmp.useTmpfs = true;
 
@@ -39,9 +37,10 @@
       if btrfs subvolume show /mnt/@blank >/dev/null 2>&1; then
         btrfs subvolume delete -R /mnt/@
         btrfs subvolume snapshot /mnt/@blank /mnt/@
-        echo 'root subvolume undo successfully'
+        echo 'root subvolume rolled back from @blank'
       else
-        echo 'rollback skipped'
+        btrfs subvolume snapshot /mnt/@ /mnt/@blank
+        echo 'pristine @blank created'
       fi
       umount /mnt
     '';

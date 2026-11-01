@@ -9,7 +9,7 @@
   sops.defaultSopsFile = ../../../secrets/laptop.yaml;
   sops.defaultSopsFormat = "yaml";
 
-  #sops.secrets."user/laravel-password".neededForUsers = true;
+  sops.secrets."user/laravel-password".neededForUsers = true;
   #sops.secrets."wifi/home-psk" = { }; 
   #sops.secrets."wifi/home-ssid" = { };
   #sops.secrets."wifi/mobile-ssid" = { };

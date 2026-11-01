@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 {
   imports = [
     inputs.nixos-hardware.nixosModules.framework-13-7040-amd
@@ -24,6 +24,8 @@
       "davinci-resolve"
       "aseprite"
     ];
+
+  users.users.laravel.hashedPasswordFile = config.sops.secrets."user/laravel-password".path;
 
   networking.hostName = "framework13";
   system.stateVersion = "26.11";

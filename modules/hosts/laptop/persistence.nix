@@ -16,6 +16,7 @@
       "/var/lib/systemd"
       "/var/lib/fwupd"
       "/var/lib/AccountsService"
+      "/var/lib/usbguard"
     ];
 
     files = [
@@ -24,4 +25,6 @@
       "/etc/machine-id"
     ];
   };
+
+  fileSystems."/persist".neededForBoot = true;
 }

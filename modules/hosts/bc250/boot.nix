@@ -14,8 +14,6 @@
 
   hardware.cpu.amd.updateMicrocode = true;
 
-  boot.initrd.systemd.enable = true;
-
   boot.supportedFilesystems = [ "btrfs" "ext4" "exfat" "ntfs" ];
   boot.kernelParams = [ "quiet" "loglevel=3" "nvme_core.default_ps_max_latency_us=0" ];
 }

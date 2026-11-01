@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, lib, pkgs, ...}:
 {
   environment.systemPackages = with pkgs; [
     tmux
@@ -19,6 +19,13 @@
       dates = "weekly";
     };
   };
+
+  systemd.services = lib.mapAttrs' (
+    name: container:
+    lib.nameValuePair container.serviceName {
+      unitConfig.RequiresMountsFor = [ "/data" ];
+    }
+  ) config.virtualisation.oci-containers.containers;
   
   virtualisation.oci-containers = {
     backend = "docker";
@@ -55,10 +62,10 @@
       };
 
       jellyseerr = {
-          image = "fallenbagel/jellyseerr:latest";
+          image = "ghcr.io/seerr-team/seerr:latest";
           ports = [ "8001:5055" ];
           volumes = [ "/data/jellyseerr/config:/app/config" ];
-          environment = { TZ = "Europe/Budapest" };
+          environment = { TZ = "Europe/Budapest"; };
           extraOptions = [ "--add-host=host.docker.internal:host-gateway" ];
       };
 
@@ -68,7 +75,7 @@
         volumes = [
           "/data/prowlarr/config:/config"
         ];
-        environment = { PUID = "1000"; PGID = "1000"; TZ = "Europe/Budapest" };
+        environment = { PUID = "1000"; PGID = "1000"; TZ = "Europe/Budapest"; };
         extraOptions = [ "--add-host=host.docker.internal:host-gateway" ];
       };
 
@@ -80,7 +87,7 @@
           "/data/qbittorrent_series/downloads:/downloads"
           "/data/media:/media"
         ];
-        environment = { PUID = "1000"; PGID = "1000"; TZ = "Europe/Budapest" };
+        environment = { PUID = "1000"; PGID = "1000"; TZ = "Europe/Budapest"; };
         extraOptions = [ "--add-host=host.docker.internal:host-gateway" ];
       };
 
