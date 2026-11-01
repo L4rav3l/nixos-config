@@ -15,10 +15,13 @@
 
   hardware.bc250 = {
     enable = true;
-    feautres = {
+    features = {
       acpiFix.enable = true;
       coreUnlock.enable = true;
       vramSplit = 6144;
+      cuLiveManager.enable = true;
     };
   };
+
+  services.cyan-skillfish-governor-smu.settings.gpu-usage.fix-freq = true;
 }
