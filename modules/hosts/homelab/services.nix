@@ -53,6 +53,43 @@
           WEBUI_PORT = "8080";
         };
       };
+
+      jellyseer = {
+          image = "";
+          ports = [];
+      };
+
+      prowlarr = {
+        image = "";
+        ports = [];
+      };
+
+      sonarr = {
+        image = "";
+        ports = [];
+      };
+
+      radarr = {
+        image = "";
+        ports = [];
+      };
+
+      tdarr = {
+        image = "";
+        ports = [];
+      };
+
+      jellyfin = {
+        image = "jellyfin/jellyfin:latest";
+        ports = [ "8000:8096" ];
+        volumes = [
+          "/data/qbittorrent_series/downloads:/series"
+          "/data/qbittorrent_movies/downloads:/movies"
+          "/data/media:/media"
+        ];
+      };
+
+
     };
   };
 
