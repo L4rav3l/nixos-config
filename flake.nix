@@ -35,9 +35,16 @@
                 specialArgs = { inherit inputs; };
                 modules = [ ./modules/hosts/homelab/default.nix ];
             };
+
+            bc250 = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                specialArgs = { inherit inputs; };
+                modules = [ ./modules/hosts/bc250/default.nix ];
+            };
         };
 
         diskoConfigurations.laptop = import ./modules/hosts/laptop/disko.nix;
         diskoConfigurations.homelab = import ./modules/hosts/homelab/disko.nix;
+        diskoConfigurations.bc250 = import ./modules/hosts/bc250/disko.nix;
     };
 }
