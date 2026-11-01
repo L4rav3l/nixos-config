@@ -24,14 +24,14 @@
                 type = "btrfs";
                 extraArgs = [ "-f" ];
                 subvolumes = {
-                  "@"          = { mounpoint = "/";            mountOptions = [ "compress=zstd:1" "noatime" ]; };
-                  "@home"      = { mounpoint = "/home";        mountOptions = [ "compress=zstd:1" "noatime" ]; };
-                  "@nix"       = { mounpoint = "/nix";         mountOptions = [ "compress=zstd:1" "noatime" ]; };
-                  "@log"       = { mounpoint = "/var/log";     mountOptions = [ "compress=zstd:1" "noatime" ]; };
-                  "@cache"     = { mounpoint = "/var/cache";   mountOptions = [ "compress=zstd:1" "noatime" ]; };
-                  "@tmp"       = { mounpoint = "/var/tmp";     mountOptions = [ "compress=zstd:1" "noatime" ]; };
-                  "@srv"       = { mounpoint = "/srv";         mountOptions = [ "compress=zstd:1" "noatime" ]; };
-                  "@snapshots" = { mounpoint = "/.snapshots";  mountOptions = [ "compress=zstd:1" "noatime" ]; };
+                  "@"          = { mountpoint = "/";            mountOptions = [ "compress=zstd:1" "noatime" ]; };
+                  "@home"      = { mountpoint = "/home";        mountOptions = [ "compress=zstd:1" "noatime" ]; };
+                  "@nix"       = { mountpoint = "/nix";         mountOptions = [ "compress=zstd:1" "noatime" ]; };
+                  "@log"       = { mountpoint = "/var/log";     mountOptions = [ "compress=zstd:1" "noatime" ]; };
+                  "@cache"     = { mountpoint = "/var/cache";   mountOptions = [ "compress=zstd:1" "noatime" ]; };
+                  "@tmp"       = { mountpoint = "/var/tmp";     mountOptions = [ "compress=zstd:1" "noatime" ]; };
+                  "@srv"       = { mountpoint = "/srv";         mountOptions = [ "compress=zstd:1" "noatime" ]; };
+                  "@snapshots" = { mountpoint = "/.snapshots";  mountOptions = [ "compress=zstd:1" "noatime" ]; };
                 };
               };
             };

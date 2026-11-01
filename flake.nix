@@ -20,6 +20,8 @@
         impermanence.url = "github:nix-community/impermanence";
         impermanence.inputs.nixpkgs.follows = "nixpkgs";
         impermanence.inputs.home-manager.follows = "home-manager";
+
+        nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     };
 
     outputs = {self, nixpkgs, ... }@inputs: {
