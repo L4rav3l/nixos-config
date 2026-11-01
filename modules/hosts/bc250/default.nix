@@ -3,6 +3,7 @@
   imports = [
     inputs.disko.nixosModules.disko
     inputs.home-manager.nixosModules.home-manager
+    inputs.bc-250.nisosModules.bc250;
 
     ./boot.nix
     ./disko.nix

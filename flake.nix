@@ -22,6 +22,8 @@
         impermanence.inputs.home-manager.follows = "home-manager";
 
         nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
+        bc-250.url = "github:TesseractCat/bc250-nixos";
     };
 
     outputs = {self, nixpkgs, ... }@inputs: {

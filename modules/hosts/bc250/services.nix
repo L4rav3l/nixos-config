@@ -12,4 +12,13 @@
     enable = true;
     user = "laravel";
   };
+
+  hardware.bc250 = {
+    enable = true;
+    feautres = {
+      acpiFix.enable = true;
+      coreUnlock.enable = true;
+      vramSplit = 6144;
+    };
+  };
 }
