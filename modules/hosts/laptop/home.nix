@@ -52,6 +52,7 @@
   };
 
   programs.git = {
+    enable = true;
     userName = "L4rav3l";
     userEmail = "108834640+L4rav3l@users.noreply.github.com";
     aliases = {

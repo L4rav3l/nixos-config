@@ -11,4 +11,9 @@ creation_rules:
     key_groups:
       - age:
           - *laravel
-        #  - *homelab
+        #  - homelab
+  - path_regex: secrets/bc250\.yaml$
+    key_groups:
+      - age:
+          - *laravel
+        #  - bc250
