@@ -1,6 +1,4 @@
-This is a NixOS config for my personal machine, BC250 card, and homelab, packed with tons of extra features.
-
----
+This repository contains a modular NixOS configuration tailored for my personal machine, BC250 compute node, and homelab, packed with tons of extra features.
 
 ## Quick Setup Guide
 
@@ -25,6 +23,8 @@ sudo nixos-install --flake .#laptop
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko ./modules/hosts/bc250/disko.nix
 sudo nixos-install --flake .#bc250
 ```
+
+After installation, reboot and enjoy your system!
 
 3. Homelab
 ```
