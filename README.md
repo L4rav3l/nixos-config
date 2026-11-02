@@ -1,4 +1,4 @@
-This repository contains a modular NixOS configuration tailored for my personal machine, BC250 compute node, and homelab, packed with tons of extra features.
+This repository contains a reproducible, modular NixOS configuration tailored for my personal machine, BC250 compute node, and homelab, packed with tons of extra features like USBGuard security, impermanence with persistent storage, and unlocked BC250 performance tuning optimizations.
 
 ## Quick Setup Guide
 
